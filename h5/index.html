@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>我就是我</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="../self/js/lib/jquery.js"></script>
+</head>
+<body>
+<textarea  id="test" cols="50" rows="10"></textarea>
+<input type="button" id="btn" value="click" />
+</body>
+<script>
+	var $test = $('#test'),
+		$btn = $('#btn');
+	$btn.on('click', function(){
+		var img = new Image();
+		img.src = 'XXXX';
+		img.onerror = function(){
+			console.log('error');
+			$test.focus();
+		}
+	});
+
+</script>
+</html>

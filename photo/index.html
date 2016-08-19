@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<!-- info -->
+	<title>周小虎&小琴 婚纱照出炉祝福~~送祝福抢现金啦~~</title>
+	<meta name="keywords" content="周小虎&小琴 婚纱照出炉祝福~~送祝福抢现金啦~~">
+	<meta name="description" content="亲~~我的婚纱照怎么样~~还没拍的朋友们抓紧啦~~我现在享受好友特权，下面优惠代金券哦~">
+	<!-- css -->
+	<link href="http://www.jizhiyingxiao1.com/resource/user/16/css/jkstyle.css?v=14.09.29" rel="stylesheet">
+	<link href="http://www.jizhiyingxiao1.com/resource/user/16/css/font-awesome.min.css" rel="stylesheet">
+	<link href="favicon.png" rel="icon" type="image">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	<!-- js -->
+	<script src="http://www.jizhiyingxiao1.com/resource/user/js/jquery-1.11.1.min.js" ></script>
+	<script src="http://www.jizhiyingxiao1.com/resource/user/js/jkfreetag.js?v=2.3" ></script>
+	<script src="http://www.jizhiyingxiao1.com/resource/user/16/js/custom.js?v=1.1" ></script>
+</head>
+<body>
+<div class="thebigwrap">
+	<div class="gap">
+		<div class="blocktitle">属于我们的幸福</div>
+		<div class="blockcont">
+			<span style="font-size:2em;">周小虎&小琴</span>
+		</div>
+	</div>
+	<div class="gap">
+		<img src="./images/1.jpg"/>
+		<img src="./images/2.jpg"/>
+		<img src="./images/3.jpg"/>
+		<img src="./images/4.jpg"/>
+		<img src="./images/5.jpg"/>
+		<img src="./images/6.jpg"/>
+		<img src="./images/7.jpg"/>
+		<img src="./images/8.jpg"/>
+		<img src="./images/9.jpg"/>
+		<img src="./images/10.jpg"/>
+		<img src="./images/11.jpg"/>
+	</div>
+	<div class="gap">
+		<div class="bestwishes">
+			<div class="blocktitle">送上祝福</div>
+			<div class="blockcont">
+				<!-- 选择列表 -->
+				<div class="conttext">
+					<ul class="bestwishes-ul">
+						<li>A.才子佳人，欧巴女神~</li>
+						<li>B.天生一对，地造一双~</li>
+						<li>C.天长地久，白头偕老~</li>
+					</ul>
+					<script>
+						//选择项目
+						$('.bestwishes-ul>li').click(function(){
+							$('.bestwishes-ul>li').removeClass('selectedopt');
+							$(this).addClass('selectedopt');
+						});
+						$('.bestwishes-ul>li:first').addClass('selectedopt');
+					</script>
+				</div>
+
+				<!-- btn -->
+				<div class="withesbtn">送上祝福</div>
+
+				<!-- turnto -->
+				<div class="turnto">
+					<div class="sharetext" id="voteout">
+						已经收到<span class="bigtext" id="votenum_x">--</span>份祝福，谢谢亲的祝福^^ ！<br/>
+					</div>
+					<div class="shareblock">
+						<div>谢谢亲的祝福^^ </div>
+					</div>
+				</div>
+				<script>
+					var blessname="份祝福";
+					$('.withesbtn').click(function(){
+						vote(1);
+						var post_status = 1;
+						if(post_status){
+							var blockcont = $(this).closest('.blockcont');
+							blockcont.find('.bestwishes-ul').hide();
+							blockcont.find('.withesbtn').hide();
+							blockcont.find('.turnto').show();
+							get_vote_num();
+						}
+					});
+				</script>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- 音乐 -->
+	<div class="audioblock">
+		<audio id="pageaudio" src="http://storage.live.com/items/395779DB27B7AA09%21109?jizhi_86.mp3" preload="preload" loop="loop"></audio>
+		<div class="pageaudio-btn"><i class="fa fa-pause"></i></div>
+
+		<script>
+			var audio = document.getElementById('pageaudio');
+			audio.oncanplay = playmusic();
+
+			var audioon = 0;
+
+			$('.pageaudio-btn').click(function(){
+				if(audioon == 1){
+					audio.pause();audioon = 0;
+					$('.pageaudio-btn').html('<i class="fa fa-play-circle"></i>');
+				}else{
+					audio.play();audioon = 1;
+					$('.pageaudio-btn').html('<i class="fa fa-pause"></i>');
+				}
+			});
+
+			var firsttaped = 0;
+			function playmusic(){
+				$('.thebigwrap').on('touchstart',function(){
+					if(firsttaped == 0){
+						audio.play();audioon = 1;
+						firsttaped = 1;
+					}
+				});
+			};
+		</script>
+	</div>
+
+	<!-- nav -->
+		<div>
+			<div class="footnav-holder"><!-- placeholder --></div>
+							</div>					</li>			</ul>
+			<script>
+				//菜单js
+				$("html").mousedown(function(){ $(".subnavblock").stop().slideUp(); });
+				$(".footnav a").mousedown(function(){ event.stopPropagation(); });
+
+				$(".footnav a").click(function(){
+					$(".footnav .subnavblock").not($(this).next(".subnavblock")).stop().slideUp();
+					$(this).next(".subnavblock").stop().slideToggle();
+					event.stopPropagation();
+				});
+
+				$("html").bind('touchstart',function(){$(".subnavblock").hide();});
+				$(".footnav a").bind('touchstart',function(){ event.stopPropagation(); });
+			</script>
+		</div></div>
+<!-- 转发mask -->
+<div class="thewsharemask" id="mcover" onclick="$('#mcover').hide();" ><img src="/resource/user/14/imgh/wshare.png"/></div>
+</body>
+</html>
+<!-- <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script> -->
